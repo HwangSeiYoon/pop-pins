@@ -1,0 +1,11 @@
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/frontend/venv/bin/python",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/frontend/venv/lib/python3.13/site-packages"
+    ],
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic"
+}
+
+
+

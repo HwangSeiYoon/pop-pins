@@ -1,0 +1,18 @@
+{
+    "venvPath": "${workspaceFolder}/frontend",
+    "venv": "venv",
+    "pythonVersion": "3.13",
+    "pythonPlatform": "Darwin",
+    "executionEnvironments": [
+        {
+            "root": "${workspaceFolder}/frontend",
+            "pythonVersion": "3.13",
+            "extraPaths": [
+                "${workspaceFolder}/frontend/venv/lib/python3.13/site-packages"
+            ]
+        }
+    ]
+}
+
+
+
