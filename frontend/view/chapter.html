@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n8n 특강 시리즈</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 헤더 섹션 */
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .header .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        /* 카드 리스트 */
+        .chapter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* 개별 카드 */
+        .chapter-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .chapter-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .chapter-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .chapter-info {
+            flex: 1;
+        }
+
+        .chapter-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .chapter-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .chapter-progress {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+            margin-right: 24px;
+        }
+
+        .progress-percentage {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .progress-label {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .start-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            white-space: nowrap;
+        }
+
+        .start-button:hover {
+            background-color: #333;
+            transform: scale(1.02);
+        }
+
+        .start-button:active {
+            transform: scale(0.98);
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .header .subtitle {
+                font-size: 16px;
+            }
+
+            .chapter-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .chapter-content {
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .chapter-progress {
+                align-items: flex-start;
+                margin-right: 0;
+            }
+
+            .start-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 섹션 -->
+        <div class="header">
+            <h1>n8n 특강 시리즈</h1>
+            <p class="subtitle">주말에 무작정 따라해보기: n8n을 익혀보자!</p>
+        </div>
+
+        <!-- 카드 리스트 -->
+        <div class="chapter-list">
+            <!-- 카드 1 -->
+            <div class="chapter-card">
+                <div class="chapter-content">
+                    <div class="chapter-info">
+                        <div class="chapter-label">Special Chapter</div>
+                        <div class="chapter-title">1강. 자동화의 첫걸음 - n8n 기본 구조와 워크플로우 이해</div>
+                    </div>
+                    <div class="chapter-progress">
+                        <div class="progress-percentage">0%</div>
+                        <div class="progress-label">진행률</div>
+                    </div>
+                </div>
+                <button class="start-button" onclick="startChapter(1)">시작하기</button>
+            </div>
+
+            <!-- 카드 2 -->
+            <div class="chapter-card">
+                <div class="chapter-content">
+                    <div class="chapter-info">
+                        <div class="chapter-label">Special Chapter</div>
+                        <div class="chapter-title">2강. 데이터의 여행 - 노드 간 연결과 조건·반복 제어</div>
+                    </div>
+                    <div class="chapter-progress">
+                        <div class="progress-percentage">0%</div>
+                        <div class="progress-label">진행률</div>
+                    </div>
+                </div>
+                <button class="start-button" onclick="startChapter(2)">시작하기</button>
+            </div>
+
+            <!-- 카드 3 -->
+            <div class="chapter-card">
+                <div class="chapter-content">
+                    <div class="chapter-info">
+                        <div class="chapter-label">Special Chapter</div>
+                        <div class="chapter-title">3강. 나만의 AI 에이전트 - 외부 API와 AI 노드 연동하기</div>
+                    </div>
+                    <div class="chapter-progress">
+                        <div class="progress-percentage">0%</div>
+                        <div class="progress-label">진행률</div>
+                    </div>
+                </div>
+                <button class="start-button" onclick="startChapter(3)">시작하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 시작하기 버튼 클릭 핸들러
+        function startChapter(chapterNumber) {
+            console.log(`Chapter ${chapterNumber} 시작`);
+            // 여기에 실제 강의 페이지로 이동하는 로직을 추가하세요
+            // 예: window.location.href = `/chapter/${chapterNumber}`;
+            alert(`${chapterNumber}강을 시작합니다!`);
+        }
+
+        // 진행률 업데이트 함수 (예시)
+        function updateProgress(chapterNumber, percentage) {
+            const cards = document.querySelectorAll('.chapter-card');
+            if (cards[chapterNumber - 1]) {
+                const progressElement = cards[chapterNumber - 1].querySelector('.progress-percentage');
+                if (progressElement) {
+                    progressElement.textContent = `${percentage}%`;
+                }
+            }
+        }
+
+        // 페이지 로드 시 저장된 진행률 불러오기 (예시)
+        window.addEventListener('DOMContentLoaded', function() {
+            // localStorage나 API에서 진행률을 불러와서 업데이트할 수 있습니다
+            // 예: updateProgress(1, 50);
+        });
+    </script>
+</body>
+</html>
+
+

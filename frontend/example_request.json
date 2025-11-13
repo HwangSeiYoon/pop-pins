@@ -1,0 +1,15 @@
+{
+  "title": "확률과 통계 2주 완성", # 학습 계획 제목
+  "goal": "고1 확률과 통계 중간고사 대비", # 학습 목표/주제
+  "startDate": "2024-11-10", # 시작일 (YYYY-MM-DD 형식)
+  "endDate": "2024-11-24", # 종료일 (YYYY-MM-DD 형식)
+  "maxCourseCount": 5, # 최대 학습 과정 갯수 (AI에게 맡기기면 null)
+  "currentStatus": "확률 개념은 익숙하나 분산/표준편차 계산에서 실수가 많음", # 현재 학습 상황
+  "requests": "매일 30분 분량으로 쪼개 주세요", # 요청 사항
+  "referenceLinks": [
+    "https://blog.example.com/prob-basics", # 참고 링크 목록
+    "https://example.com/statistics-guide" # 참고 링크 목록
+  ]
+}
+
+
